@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, FileText, Sparkles, Layout, Download, Zap, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImg from "@/assets/hero-illustration.png";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
