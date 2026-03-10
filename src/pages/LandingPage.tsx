@@ -37,7 +37,7 @@ export default function LandingPage() {
             <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
               <FileText className="w-4 h-4 text-primary-foreground" />
             </div>
-            <span className="font-display text-lg font-bold text-foreground">DocCraft</span>
+            <span className="font-display text-lg font-bold text-foreground">Docsy</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#features" className="hover:text-foreground transition-colors">Features</a>
