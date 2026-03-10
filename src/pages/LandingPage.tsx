@@ -70,7 +70,7 @@ export default function LandingPage() {
               <span className="gradient-text">Minutes</span>
             </motion.h1>
             <motion.p {...fadeUp(0.2)} className="text-lg text-muted-foreground max-w-lg mb-8">
-              DocCraft uses AI to generate fully formatted reports, research papers, and assignments — complete with citations, tables, and proper formatting.
+              Docsy uses AI to generate fully formatted reports, research papers, and assignments — complete with citations, tables, and proper formatting.
             </motion.p>
             <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-3">
               <Button size="lg" onClick={() => navigate("/create")} className="gap-2">
