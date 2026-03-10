@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, FileText, Sparkles, Layout, Download, Zap, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImg from "@/assets/hero-illustration.png";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -36,7 +37,7 @@ export default function LandingPage() {
             <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
               <FileText className="w-4 h-4 text-primary-foreground" />
             </div>
-            <span className="font-display text-lg font-bold text-foreground">DocCraft</span>
+            <span className="font-display text-lg font-bold text-foreground">Docsy</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#features" className="hover:text-foreground transition-colors">Features</a>
@@ -44,6 +45,7 @@ export default function LandingPage() {
             <a href="#templates" className="hover:text-foreground transition-colors">Templates</a>
           </div>
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
               Log in
             </Button>
@@ -68,7 +70,7 @@ export default function LandingPage() {
               <span className="gradient-text">Minutes</span>
             </motion.h1>
             <motion.p {...fadeUp(0.2)} className="text-lg text-muted-foreground max-w-lg mb-8">
-              DocCraft uses AI to generate fully formatted reports, research papers, and assignments — complete with citations, tables, and proper formatting.
+              Docsy uses AI to generate fully formatted reports, research papers, and assignments — complete with citations, tables, and proper formatting.
             </motion.p>
             <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-3">
               <Button size="lg" onClick={() => navigate("/create")} className="gap-2">
@@ -82,7 +84,7 @@ export default function LandingPage() {
           <motion.div {...fadeUp(0.2)} className="flex justify-center">
             <img
               src={heroImg}
-              alt="DocCraft AI document generation illustration"
+              alt="Docsy AI document generation illustration"
               className="w-full max-w-md animate-float"
             />
           </motion.div>
@@ -97,7 +99,7 @@ export default function LandingPage() {
               Everything You Need
             </h2>
             <p className="text-muted-foreground max-w-md mx-auto">
-              From topic to finished document — DocCraft handles it all.
+              From topic to finished document — Docsy handles it all.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -173,9 +175,9 @@ export default function LandingPage() {
             <div className="w-6 h-6 rounded gradient-bg flex items-center justify-center">
               <FileText className="w-3 h-3 text-primary-foreground" />
             </div>
-            <span className="font-display font-semibold text-foreground">DocCraft</span>
+            <span className="font-display font-semibold text-foreground">Docsy</span>
           </div>
-          <p>© 2026 DocCraft. Built for students, by students.</p>
+          <p>© 2026 Docsy. Built for students, by students.</p>
         </div>
       </footer>
     </div>

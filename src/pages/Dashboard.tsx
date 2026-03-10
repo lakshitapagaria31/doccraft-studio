@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const recentReports = [
   { title: "Internship Report — Summer 2025", updatedAt: "2 hours ago", pages: 12, status: "complete" as const },
@@ -44,7 +45,7 @@ export default function Dashboard() {
           <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
             <FileText className="w-4 h-4 text-primary-foreground" />
           </div>
-          <span className="font-display text-lg font-bold text-foreground">DocCraft</span>
+          <span className="font-display text-lg font-bold text-foreground">Docsy</span>
         </div>
 
         <Button className="mb-6 gap-2 w-full" onClick={() => navigate("/create")}>
@@ -82,6 +83,7 @@ export default function Dashboard() {
             />
           </div>
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Button variant="ghost" size="icon" className="relative">
               <Bell className="w-4 h-4" />
               <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-accent" />
