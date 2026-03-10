@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const recentReports = [
   { title: "Internship Report — Summer 2025", updatedAt: "2 hours ago", pages: 12, status: "complete" as const },
