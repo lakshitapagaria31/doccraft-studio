@@ -45,6 +45,7 @@ export default function LandingPage() {
             <a href="#templates" className="hover:text-foreground transition-colors">Templates</a>
           </div>
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
               Log in
             </Button>
