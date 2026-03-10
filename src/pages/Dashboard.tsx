@@ -45,7 +45,7 @@ export default function Dashboard() {
           <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
             <FileText className="w-4 h-4 text-primary-foreground" />
           </div>
-          <span className="font-display text-lg font-bold text-foreground">DocCraft</span>
+          <span className="font-display text-lg font-bold text-foreground">Docsy</span>
         </div>
 
         <Button className="mb-6 gap-2 w-full" onClick={() => navigate("/create")}>
