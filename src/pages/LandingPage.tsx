@@ -99,7 +99,7 @@ export default function LandingPage() {
               Everything You Need
             </h2>
             <p className="text-muted-foreground max-w-md mx-auto">
-              From topic to finished document — DocCraft handles it all.
+              From topic to finished document — Docsy handles it all.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
