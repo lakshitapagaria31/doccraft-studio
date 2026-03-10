@@ -84,7 +84,7 @@ export default function LandingPage() {
           <motion.div {...fadeUp(0.2)} className="flex justify-center">
             <img
               src={heroImg}
-              alt="DocCraft AI document generation illustration"
+              alt="Docsy AI document generation illustration"
               className="w-full max-w-md animate-float"
             />
           </motion.div>
