@@ -175,9 +175,9 @@ export default function LandingPage() {
             <div className="w-6 h-6 rounded gradient-bg flex items-center justify-center">
               <FileText className="w-3 h-3 text-primary-foreground" />
             </div>
-            <span className="font-display font-semibold text-foreground">DocCraft</span>
+            <span className="font-display font-semibold text-foreground">Docsy</span>
           </div>
-          <p>© 2026 DocCraft. Built for students, by students.</p>
+          <p>© 2026 Docsy. Built for students, by students.</p>
         </div>
       </footer>
     </div>
