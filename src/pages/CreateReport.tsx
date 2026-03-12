@@ -150,12 +150,12 @@ export default function CreateReport() {
                   </div>
                   <h2 className="font-display text-xl font-bold text-foreground mb-2">Ready to Generate!</h2>
                   <p className="text-sm text-muted-foreground mb-2">Your report will be generated with these settings:</p>
-                  <div className="rounded-lg bg-secondary p-4 text-left text-sm space-y-1 mb-6">
-                    <p><span className="text-muted-foreground">Topic:</span> <span className="font-medium text-foreground">{topic || "Not specified"}</span></p>
-                    <p><span className="text-muted-foreground">Pages:</span> <span className="font-medium text-foreground">{pages}</span></p>
-                    <p><span className="text-muted-foreground">Citation:</span> <span className="font-medium text-foreground">{citation}</span></p>
-                    <p><span className="text-muted-foreground">ToC:</span> <span className="font-medium text-foreground">{includeToC ? "Yes" : "No"}</span></p>
-                    <p><span className="text-muted-foreground">References:</span> <span className="font-medium text-foreground">{includeRefs ? "Yes" : "No"}</span></p>
+                  <div className="rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-5 text-left text-sm space-y-2 mb-6 text-white shadow-lg">                    
+                    <p><span className="text-white/80">Topic:</span> <span className="font-medium text-foreground">{topic || "Not specified"}</span></p>
+                    <p><span className="text-white/80">Pages:</span> <span className="font-medium text-foreground">{pages}</span></p>
+                    <p><span className="text-white/80">Citation:</span> <span className="font-medium text-foreground">{citation}</span></p>
+                    <p><span className="text-white/80">ToC:</span> <span className="font-medium text-foreground">{includeToC ? "Yes" : "No"}</span></p>
+                    <p><span className="text-white/80">References:</span> <span className="font-medium text-foreground">{includeRefs ? "Yes" : "No"}</span></p>
                   </div>
                 </div>
               )}

@@ -4,7 +4,7 @@ import { ArrowRight, FileText, Sparkles, Layout, Download, Zap, BookOpen } from 
 import { useNavigate } from "react-router-dom";
 import heroImg from "@/assets/hero-illustration.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
-
+import logo from "@/assets/docsy-logo.png";
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
@@ -34,9 +34,11 @@ export default function LandingPage() {
       <nav className="fixed top-0 inset-x-0 z-50 glass">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
-              <FileText className="w-4 h-4 text-primary-foreground" />
-            </div>
+          <img
+           src={logo}
+           alt="Docsy Logo"
+           className="w-9 h-9 object-contain"
+          />
             <span className="font-display text-lg font-bold text-foreground">Docsy</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
@@ -133,12 +135,18 @@ export default function LandingPage() {
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((s, i) => (
-              <motion.div key={s.num} {...fadeUp(i * 0.1)} className="relative">
-                <span className="font-display text-5xl font-bold text-primary/10">{s.num}</span>
-                <h3 className="font-display text-lg font-semibold text-foreground mt-2 mb-1">{s.title}</h3>
-                <p className="text-sm text-muted-foreground">{s.desc}</p>
-              </motion.div>
-            ))}
+  <motion.div key={s.num} {...fadeUp(i * 0.1)} className="relative">
+    <span className="font-display text-5xl font-bold text-primary/60">{s.num}</span>
+
+    <h3 className="font-display text-lg font-semibold text-foreground mt-2 mb-1">
+      {s.title}
+    </h3>
+
+    <p className="text-sm text-muted-foreground">
+      {s.desc}
+    </p>
+  </motion.div>
+))}
           </div>
         </div>
       </section>
@@ -160,8 +168,7 @@ export default function LandingPage() {
               size="lg"
               variant="secondary"
               onClick={() => navigate("/create")}
-              className="gap-2"
-            >
+              className="bg-white text-purple-600 font-semibold px-6 py-3 rounded-lg shadow-lg"            >
               Get Started Free <ArrowRight className="w-4 h-4" />
             </Button>
           </motion.div>
@@ -172,9 +179,11 @@ export default function LandingPage() {
       <footer className="py-8 border-t border-border">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded gradient-bg flex items-center justify-center">
-              <FileText className="w-3 h-3 text-primary-foreground" />
-            </div>
+          <img
+          src={logo}
+         alt="Docsy Logo"
+         className="w-6 h-6 object-contain"
+          />
             <span className="font-display font-semibold text-foreground">Docsy</span>
           </div>
           <p>© 2026 Docsy. Built for students, by students.</p>
