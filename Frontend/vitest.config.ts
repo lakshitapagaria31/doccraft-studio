@@ -4,19 +4,13 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    fs: {
-      allow: [path.resolve(__dirname, "..")],
-    },
-  },
   test: {
     environment: "jsdom",
     globals: true,
-    setupFiles: [path.resolve(__dirname, "../src/test/setup.ts")],
-    include: ["../src/**/*.{test,spec}.{ts,tsx}"],
+    setupFiles: ["./src/test/setup.ts"],
+    include: ["src/**/*.{test,spec}.{ts,tsx}"],
   },
   resolve: {
-    preserveSymlinks: true,
-    alias: { "@": path.resolve(__dirname, "../src") },
+    alias: { "@": path.resolve(__dirname, "./src") },
   },
 });
