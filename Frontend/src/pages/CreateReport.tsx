@@ -59,6 +59,11 @@ export default function CreateReport() {
                     placeholder="e.g., Impact of Machine Learning on Healthcare Systems"
                     className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring min-h-[100px] resize-none"
                   />
+                  {topic.trim() === "" && (
+  <p className="text-xs text-muted-foreground mt-2">
+    Please enter a topic to continue.
+  </p>
+)}
                 </div>
               )}
 
@@ -145,32 +150,35 @@ export default function CreateReport() {
 
               {step === 3 && (
                 <div className="text-center py-4">
-                  <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4">
-                    <Sparkles className="w-7 h-7 text-primary-foreground" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mx-auto mb-4 shadow-md">                    <Sparkles className="w-7 h-7 text-primary-foreground" />
                   </div>
                   <h2 className="font-display text-xl font-bold text-foreground mb-2">Ready to Generate!</h2>
                   <p className="text-sm text-muted-foreground mb-2">Your report will be generated with these settings:</p>
-                  <div className="rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-5 text-left text-sm space-y-2 mb-6 text-white shadow-lg">                    
-                    <p><span className="text-white/80">Topic:</span> <span className="font-medium text-foreground">{topic || "Not specified"}</span></p>
-                    <p><span className="text-white/80">Pages:</span> <span className="font-medium text-foreground">{pages}</span></p>
-                    <p><span className="text-white/80">Citation:</span> <span className="font-medium text-foreground">{citation}</span></p>
-                    <p><span className="text-white/80">ToC:</span> <span className="font-medium text-foreground">{includeToC ? "Yes" : "No"}</span></p>
-                    <p><span className="text-white/80">References:</span> <span className="font-medium text-foreground">{includeRefs ? "Yes" : "No"}</span></p>
+                  <div className="rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 p-6 text-left text-sm space-y-3 mb-6 text-white shadow-lg">
+                    <p><span className="text-white/80">Topic:</span> <span className="font-semibold text-white">{topic || "Not specified"}</span></p>
+                    <p><span className="text-white/80">Pages:</span> <span className="font-semibold text-white">{pages}</span></p>
+                    <p><span className="text-white/80">Citation:</span> <span className="font-semibold text-white">{citation}</span></p>
+                    <p><span className="text-white/80">ToC:</span> <span className="font-semibold text-white">{includeToC ? "Yes" : "No"}</span></p>
+                    <p><span className="text-white/80">References:</span> <span className="font-semibold text-white">{includeRefs ? "Yes" : "No"}</span></p>
                   </div>
                 </div>
               )}
             </motion.div>
           </AnimatePresence>
 
-          <div className="flex justify-between mt-6">
+          <div className="flex justify-between mt-8">
             <Button variant="outline" onClick={prev} disabled={step === 0} className="gap-2">
               <ArrowLeft className="w-4 h-4" /> Back
             </Button>
             {step < 3 ? (
-              <Button onClick={next} className="gap-2">
-                Next <ArrowRight className="w-4 h-4" />
-              </Button>
-            ) : (
+  <Button
+    onClick={next}
+    disabled={step === 0 && topic.trim() === ""}
+    className="gap-2"
+  >
+    Next <ArrowRight className="w-4 h-4" />
+  </Button>
+) : (
               <Button onClick={handleGenerate} className="gap-2">
                 <Sparkles className="w-4 h-4" /> Generate Report
               </Button>

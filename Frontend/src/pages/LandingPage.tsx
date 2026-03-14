@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, FileText, Sparkles, Layout, Download, Zap, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import heroImg from "@/assets/hero-illustration.png";
+import heroImg from "@/assets/docsy-hero.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import logo from "@/assets/docsy-logo.png";
 const fadeUp = (delay = 0) => ({
@@ -59,8 +59,12 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="container grid md:grid-cols-2 gap-12 items-center">
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">       
+          {/* background glow */}
+  <div className="absolute inset-0 -z-10 flex justify-center">
+    <div className="w-[800px] h-[400px] bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-indigo-500/20 blur-3xl opacity-40 rounded-full"></div>
+  </div>
+   <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div>
             <motion.div {...fadeUp(0)}>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary mb-6">
@@ -84,12 +88,14 @@ export default function LandingPage() {
             </motion.div>
           </div>
           <motion.div {...fadeUp(0.2)} className="flex justify-center">
-            <img
-              src={heroImg}
-              alt="Docsy AI document generation illustration"
-              className="w-full max-w-md animate-float"
-            />
-          </motion.div>
+  <div className="rounded-2xl border border-border bg-card/40 backdrop-blur-lg p-6 shadow-elevated">
+    <img
+      src={heroImg}
+      alt="Docsy AI document generation"
+      className="w-full max-w-md"
+    />
+  </div>
+</motion.div>
         </div>
       </section>
 
@@ -109,13 +115,14 @@ export default function LandingPage() {
               <motion.div
                 key={f.title}
                 {...fadeUp(i * 0.1)}
-                className="rounded-xl border border-border bg-card p-6 shadow-soft hover:shadow-card transition-shadow"
-              >
-                <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <f.icon className="w-5 h-5 text-primary" />
+                className="rounded-2xl border border-border bg-card/60 backdrop-blur p-6 shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-all duration-300"              >
+<div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-4 shadow-sm">                 
+ <f.icon className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="font-display text-base font-semibold text-foreground mb-2">{f.title}</h3>
-                <p className="text-sm text-muted-foreground">{f.desc}</p>
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2">                 
+                   {f.title}</h3>
+                   <p className="text-sm text-muted-foreground leading-relaxed">
+                  {f.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -177,18 +184,18 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="py-8 border-t border-border">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-          <img
-          src={logo}
-         alt="Docsy Logo"
-         className="w-6 h-6 object-contain"
-          />
-            <span className="font-display font-semibold text-foreground">Docsy</span>
-          </div>
-          <p>© 2026 Docsy. Built for students, by students.</p>
-        </div>
-      </footer>
+  <div className="container flex flex-col items-center gap-3 text-sm text-muted-foreground">
+
+    <img
+      src={logo}
+      alt="Docsy Logo"
+      className="w-6 h-6 object-contain"
+    />
+
+    <p>© 2026 Docsy</p>
+
+  </div>
+</footer>
     </div>
   );
 }

@@ -12,9 +12,9 @@ interface ReportCardProps {
 }
 
 const statusStyles = {
-  draft: "bg-secondary text-muted-foreground",
-  complete: "bg-primary/10 text-primary",
-  generating: "bg-accent/10 text-accent",
+  draft: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300",
+  complete: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+  generating: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
 };
 
 export function ReportCard({ title, updatedAt, pages, status, className, onClick }: ReportCardProps) {

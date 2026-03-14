@@ -4,10 +4,16 @@ import { TemplateCard } from "@/components/TemplateCard";
 import {
   LayoutDashboard, FileText, Library, Settings, Plus, Search, Bell, TrendingUp, Clock, FileCheck,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
-
+import logo from "@/assets/docsy-logo.png";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
 const recentReports = [
   { title: "Internship Report — Summer 2025", updatedAt: "2 hours ago", pages: 12, status: "complete" as const },
   { title: "Machine Learning Research Paper", updatedAt: "Yesterday", pages: 8, status: "draft" as const },
@@ -29,46 +35,18 @@ const stats = [
 
 const sidebarItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
-  { icon: FileText, label: "My Reports", path: "/dashboard" },
+  { icon: FileText, label: "My Reports", path: "/reports" },
   { icon: Library, label: "Templates", path: "/templates" },
-  { icon: Settings, label: "Settings", path: "/dashboard" },
+  { icon: Settings, label: "Settings", path: "/settings" },
 ];
 
 export default function Dashboard() {
   const navigate = useNavigate();
-
+  const location = useLocation();
   return (
     <div className="flex min-h-screen bg-background">
       {/* Sidebar */}
-      <aside className="hidden md:flex w-64 flex-col border-r border-border bg-card p-5 gap-1">
-        <div className="flex items-center gap-2 mb-8">
-          <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
-            <FileText className="w-4 h-4 text-primary-foreground" />
-          </div>
-          <span className="font-display text-lg font-bold text-foreground">Docsy</span>
-        </div>
-
-        <Button className="mb-6 gap-2 w-full" onClick={() => navigate("/create")}>
-          <Plus className="w-4 h-4" /> New Report
-        </Button>
-
-        <nav className="flex flex-col gap-1">
-          {sidebarItems.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => navigate(item.path)}
-              className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
-                item.label === "Dashboard"
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-              }`}
-            >
-              <item.icon className="w-4 h-4" />
-              {item.label}
-            </button>
-          ))}
-        </nav>
-      </aside>
+      
 
       {/* Main */}
       <main className="flex-1 overflow-y-auto">
@@ -88,9 +66,27 @@ export default function Dashboard() {
               <Bell className="w-4 h-4" />
               <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-accent" />
             </Button>
-            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-sm font-semibold text-primary">
-              A
-            </div>
+            <DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <button className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-sm font-semibold text-primary hover:bg-primary/30 transition">
+      A
+    </button>
+  </DropdownMenuTrigger>
+
+  <DropdownMenuContent align="end" className="w-40">
+    <DropdownMenuItem onClick={() => navigate("/settings")}>
+      Profile
+    </DropdownMenuItem>
+
+    <DropdownMenuItem onClick={() => navigate("/settings")}>
+      Settings
+    </DropdownMenuItem>
+
+    <DropdownMenuItem className="text-red-500">
+      Logout
+    </DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
           </div>
         </header>
 

@@ -67,8 +67,8 @@ export default function TemplateLibrary() {
               onClick={() => setActive(c)}
               className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                 active === c
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-muted-foreground hover:bg-secondary/80"
+                  ? "bg-primary text-white"
+                  : "bg-muted text-foreground hover:bg-muted/80"
               }`}
             >
               {c}

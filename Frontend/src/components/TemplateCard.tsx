@@ -25,8 +25,7 @@ export function TemplateCard({ title, category, description, className, onClick 
       <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
         <FileText className="h-5 w-5 text-primary" />
       </div>
-      <span className="mb-1 inline-block rounded-full bg-secondary px-2 py-0.5 text-xs font-medium text-muted-foreground">
-        {category}
+      <span className="mb-2 inline-block rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">        {category}
       </span>
       <h3 className="mb-1 font-display text-base font-semibold text-foreground">{title}</h3>
       <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
